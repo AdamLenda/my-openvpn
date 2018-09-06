@@ -1,15 +1,36 @@
 AWSTemplateFormatVersion: 2010-09-09
-Parameters:
-#
-#  AvailabilityZone:
-#    Type: AWS::EC2::AvailabilityZone::Name
-#    Description: The Availability Zone to use Public Subnet and Private Subnet
-#    MinLength: 3
+Description: |-
+  Provisions an OpenVPN server
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Capacity
+        Parameters:
+          - OpenVpnServerInstanceType
 
+      - Label:
+          default: Administration
+        Parameters:
+          - SSHKeyPair
+          - YourCurrentPublicIp
+
+    ParameterLabels:
+      OpenVpnServerInstanceType:
+        default: OpenVPN Instance Type
+
+      SSHKeyPair:
+        default: SSH Key Pair
+
+      YourCurrentPublicIp:
+        default: Your IP Address
+
+Parameters:
   OpenVpnServerInstanceType:
     Type: String
-    Description: >
-      Instances types are available at: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html
+    Description: |+
+      t3.nano is recommended for a single user on a broad band connection. Instance pricing for your aws region is available here: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html
+
     Default: t3.nano
     AllowedValues:
       - t3.nano
@@ -28,25 +49,6 @@ Parameters:
     MaxLength: '18'
     AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})'
     ConstraintDescription: Must be an IPv4 address
-
-#
-#  SshSourceIpCidr:
-#    Type: String
-#    Description: IPv4 CIDR Block
-#    MinLength: '9'
-#    MaxLength: '18'
-#    AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
-#    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
-#
-#  Vpc:
-#    Type: AWS::EC2::VPC::Id
-#
-#  Subnet:
-#    Type: AWS::EC2::Subnet::Id
-#
-#  VpcCidrBlock:
-#    Type: String
-#    Default: 172.31.0.0/16
 
 Resources:
   LambdaExecutionRole:

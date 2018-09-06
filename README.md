@@ -132,10 +132,10 @@ or
 
 ##### Run the following command
 
-    ```
-    > sudo -i;
-    > openvpn --config ~/unique_client_name.ovpn --remote xxx.xxx.xxx.xxx
-    ```
+```
+> sudo -i;
+> openvpn --config ~/unique_client_name.ovpn --remote xxx.xxx.xxx.xxx
+```
     
 Note that xxx.xxx.xxx.xxx should be replaced with the same public IP address you used to SSH into your EC2 instance. 
 
