@@ -163,15 +163,12 @@ leave it on year round, you won't save much.
         $0.0052 per hour * 365 days * 24 a day = $45.55 a year 
 
 
-#### If you reserve an instance....
+### If you reserve an instance, ~$17 a year
  
 If you want to run the OpenVPN all the time you can purchase a reserved instance. You can find out more about this by
 looking at [AWS reserved instance pricing.](https://aws.amazon.com/ec2/pricing/reserved-instances/)
 
 As of 2018-09, a t3.nano in US-EAST-2 can be *_pre-paid for three years for $51_*. So that's about 1/3 the price of a
 the usual VPN services provider.
-
-
-
     
     
