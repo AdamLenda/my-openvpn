@@ -110,13 +110,13 @@ or
     Client Certificate Generated: /home/ec2-user/unique_client_name.ovpn
     ```
     
-- Now change the owner ship of that file
+- Now change the ownership of that file
 
     ```
     > sudo chown ec2-user:ec2-user /home/ec2-user/unique_client_name.ovpn
     ```
     
-##### You are now ready to down load your client credentials
+##### You are now ready to download your client credentials
 
 ## Phase 3 Downloading client credentials
 
