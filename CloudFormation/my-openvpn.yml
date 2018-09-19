@@ -126,7 +126,7 @@ Resources:
                       responseData.DefaultVpcCidrBlock = vpc.CidrBlock;
 
                       ec2.describeSubnets(
-                        {Filters: [{Name:"vpc-id", Values:["vpc-d6cd8faf"]},{Name:"default-for-az", Values:["true"]}]},
+                        {Filters: [{Name:"vpc-id", Values:[vpc.VpcId]},{Name:"default-for-az", Values:["true"]}]},
                         function(e, result) {
                           if (e){throw e;}
                           if (!result || !result.Subnets || result.Subnets.length < 1){throw "Subnet Not Found"}
